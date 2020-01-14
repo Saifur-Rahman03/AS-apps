@@ -15,8 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<Transactions> dates = new ArrayList<>();
     private EditText editText1, editText2;
-    private TextView textView, textView2;
+    private TextView textView, textView2, textView3;
     private Button button, button2;
+    double totalCost = 0.0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textViewID);
         textView2 = findViewById(R.id.textView2ID);
+        textView3 = findViewById(R.id.textView3ID);
         button = findViewById(R.id.buttonID);
         button2 = findViewById(R.id.button2ID);
         editText1 = findViewById(R.id.editText1ID);
@@ -45,7 +47,11 @@ public class MainActivity extends AppCompatActivity {
                 show();
             }
         });
-
+    }
+    private void totalCost(){
+        for(int i = 0; i < dates.size(); i++){
+            totalCost += dates.get(i).cost;
+        }
     }
     private void show(){
         StringBuilder stringBuilder = new StringBuilder();
@@ -57,5 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     append("\n");
         }
         textView2.setText(stringBuilder.toString());
+        totalCost();
+        textView3.setText("Total cost Today: " + totalCost);
     }
 }
