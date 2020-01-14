@@ -3,6 +3,7 @@
     <string name="button_text">Save</string>
     <string name="button_text2">Show</string>
     <string name="edit_text1">Description</string>
+    <string name="totalToday">Money for Today</string>
     <string name="edit_text2">Cost</string>
     <string name="textView_text">Left </string>
 </resources>
