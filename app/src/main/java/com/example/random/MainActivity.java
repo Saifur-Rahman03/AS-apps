@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < dates.size(); i++){
             stringBuilder.
                     append(dates.get(i).description).
-                    append("\t").
+                    append("\t\t").
                     append(dates.get(i).cost).
                     append("\n");
         }
